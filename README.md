@@ -10,10 +10,8 @@ Layout with sidebar for laravel with vuejs (header, sidebar)
 - [Authentification Configuration](#authentification_configuration)
 - [Vuejs Router Installation](#vuejs_router_installation)
 - [Modification Htaccess](#modification_htaccess)
-- [Installation Composants](#installation_composants)
-- [Configuration](#configuration)
-	- [Note](#note)
-    - [Results](#results)
+- [Components Installation](#installation_composants)
+
 
 ## Laravel installation
 
@@ -110,7 +108,7 @@ php artisan config:cache
 ```
 
 
-## Installation Composants
+## Components Installation
 
 Copy/paste folder PUBLIC - RESOURCES - ROUTES in your app and replace exists folder
 
