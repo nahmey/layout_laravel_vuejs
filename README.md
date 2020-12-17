@@ -46,9 +46,7 @@ php artisan optimize:clear
 php artisan config:cache
 ```
 
-=> IMPORTANT : Avant la migration de la table USERS, aller dans database -> migrations et modifier le champ email comme ci-dessous dans la migration create_users_table et create_password_reset
-
-=> Before migration, go to database -> migrations and modify email in create_users_table and create_password_reset like this :
+=> IMPORTANT : Before migration, go to database -> migrations and modify email in create_users_table and create_password_reset like this :
 
 
 ```php
