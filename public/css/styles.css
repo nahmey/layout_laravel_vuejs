@@ -1,0 +1,215 @@
+html{
+    height: 100vh;
+    font-size: 0.9rem;
+}
+body {
+    min-height: 100vh;
+}
+#main{
+    min-height: 100vh;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active avant la 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.list-perso-enter-active, .list-perso-leave-active {
+  transition: all 1s;
+}
+.list-perso-enter, .list-perso-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/*.bloc-historique{
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}*/
+
+.tab-list-perso{
+	/*display: flex;*/
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tab-list-perso{
+	color: white;
+    background-color: #c51f1a;
+    /*border-color: #dee2e6 #dee2e6 #f8fafc;*/
+    /*border-color: #e9ecef #e9ecef #dee2e6;*/
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    margin-bottom: -1px;
+    width: 25%;
+}
+
+.tab-list-perso .form-inline{
+	border-top: 1px solid #dee2e6;
+	border-left: 1px solid #dee2e6;
+	border-right: 1px solid #dee2e6;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.champ-obligatoire{
+    border-color: #f5c6cb!important;
+    background-color: #f5c6cb!important;
+}
+
+.vdp-datepicker__calendar .cell.highlighted{
+    background-color: transparent!important;
+    border-color: #e3342f!important;
+}
+
+.vdp-datepicker__calendar {
+    position: absolute!important;
+    right: 0px!important;
+}
+
+#datepicker_memo .vdp-datepicker__calendar {
+    position: absolute!important;
+    left: 0px!important;
+}
+
+.vdp-datepicker .input-group .form-control[readonly] {
+    background: none !important;
+    border:0;
+}
+
+.card-header-perso{
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #3490dc !important;
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px);
+    /*width: 25%;*/
+}
+
+.time-picker{
+    border-radius: 0.25rem;
+    height: calc(1.6em + 0.75rem + 2px)!important;
+    color: #495057;
+    width: 100%!important;
+}
+
+.time-picker .controls{
+    margin-right: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0.275rem 0.5rem;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+}
+
+.time-picker .controls .char{
+    color: #495057;
+}
+
+.time-picker:focus{
+    /*color: red;*/
+}
+
+.input-group-text{
+    margin-bottom: 1px!important;
+    border-radius: 0!important;
+    margin-top: -1px!important;
+}
+
+.input-group-text i{
+    font-style: normal!important;
+}
+
+.custom-file:hover{
+    cursor: pointer!important;
+}
+
+.custom-file-input:hover{
+    cursor: pointer!important;
+}
+
+.custom-file-label:hover{
+    cursor: pointer!important;
+}
+
+#customFile{
+    text-indent: -999px;
+}
+
+.custom-file-label::after{
+    content: "Rechercher"!important;
+}
+
+.btn-orange{
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.btn-orange:hover{
+    color: #fff;
+    background-color: #cf9544;
+    border-color: #cf9544;
+}
+
+.delete_destinataire:hover{
+    cursor: pointer;
+}
+
+.btn-link-red{
+    font-weight: 400;
+    color: #d0211c;
+    text-decoration: none
+}
+
+#overlay{
+    z-index:1000;
+    height:100%;
+    background-color: rgba(255,255,255,0.7);
+    top:0;
+    left:0;
+}
+
+
+/*.vue-notification {
+  padding: 10px;
+  margin: 0 5px 5px;
+
+  font-size: 12px;
+
+  color: #ffffff;
+  background: #44A4FC;
+  border-left: 5px solid #187FE7;
+
+  &.warn {
+    background: #ffb648;
+    border-left-color: #f48a06;
+  }
+
+  &.error {
+    background: #E54D42;
+    border-left-color: #B82E24;
+  }
+
+  &.success {
+    background: #68CD86;
+    border-left-color: #42A85F;
+  }
+}*/
