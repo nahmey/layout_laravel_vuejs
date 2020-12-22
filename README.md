@@ -10,8 +10,8 @@ Layout with sidebar for laravel with vuejs (header, sidebar)
 - [Authentification Configuration](#authentification_configuration)
 - [Vuejs Router Installation](#vuejs_router_installation)
 - [Modification Htaccess](#modification_htaccess)
-- [Components Installation](#installation_composants)
 - [Database migration](#database_migration)
+- [Components Installation](#installation_composants)
 
 
 ## Laravel installation
@@ -106,17 +106,6 @@ php artisan optimize:clear
 php artisan config:cache
 ```
 
-
-## Components Installation
-
-Copy/paste folder PUBLIC - RESOURCES - ROUTES in your app and replace exists folder
-
-==> IMPORTANT:
-```bash
-npm run dev
-```
-
-
 ## Database migration
 
 Adding sidebar_color_column for customize sidebar color by user
@@ -124,6 +113,15 @@ Adding sidebar_color_column for customize sidebar color by user
 php artisan migrate
 ```
 
+
+## Components Installation
+
+Copy/paste folder APP - DATABASE - PUBLIC - RESOURCES - ROUTES in your app and replace exists folder
+
+==> IMPORTANT:
+```bash
+npm run dev
+```
 
 
 ENJOY !
