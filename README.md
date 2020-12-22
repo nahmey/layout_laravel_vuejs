@@ -11,6 +11,7 @@ Layout with sidebar for laravel with vuejs (header, sidebar)
 - [Vuejs Router Installation](#vuejs_router_installation)
 - [Modification Htaccess](#modification_htaccess)
 - [Components Installation](#installation_composants)
+- [Database migration](#database_migration)
 
 
 ## Laravel installation
@@ -114,6 +115,15 @@ Copy/paste folder PUBLIC - RESOURCES - ROUTES in your app and replace exists fol
 ```bash
 npm run dev
 ```
+
+
+## Database migration
+
+Adding sidebar_color_column for customize sidebar color by user
+```bash
+php artisan migrate
+```
+
 
 
 ENJOY !

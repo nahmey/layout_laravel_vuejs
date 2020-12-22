@@ -64,17 +64,17 @@
 
                                         <div class="dropdown-item pb-0 pt-0">
                                             <label for="head">Couleur Menu</label>
-                                            <input type="color" id="sidebar_color" class="float-right" onchange="changeSidebarColor(this.value)">
+                                            <input type="color" id="sidebar_color" class="float-right" onchange="changeSidebarColor(this.value),saveUserSidebarColumn();">
                                         </div>
 
                                         <div class="dropdown-item pb-0 pt-0">
                                             <label for="head">Couleur Texte</label>
-                                            <input type="color" id="sidebar_text_color" class="float-right" onchange="changeSidebarTextColor(this.value)">
+                                            <input type="color" id="sidebar_text_color" class="float-right" onchange="changeSidebarTextColor(this.value),saveUserSidebarColumn();">
                                         </div>
 
                                         <div class="dropdown-item pb-0 pt-0">
                                             <label for="head">Couleur Survol</label>
-                                            <input type="color" id="sidebar_text_hover_color"  class="float-right" onchange="changeSidebarHoverTextColor(this.value)">
+                                            <input type="color" id="sidebar_text_hover_color"  class="float-right" onchange="changeSidebarHoverTextColor(this.value),saveUserSidebarColumn();">
                                         </div>
 
                                         <div class="dropdown-item pb-0 pt-0 text-right">

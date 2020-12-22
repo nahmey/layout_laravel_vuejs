@@ -22,4 +22,5 @@ Auth::routes();
  */
 Route::group(['middleware' => ['auth', 'web']], function(){
 	Route::get('/', 'HomeController@index')->name('home');
+	Route::post('/user_sidebar_color', 'HomeController@userSidebarColor')->name('user_sidebar_color');
 });

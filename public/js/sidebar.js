@@ -1,4 +1,10 @@
+let color = '';
+let text = '';
+let textHover = '';
+const csrf = document.querySelector('meta[name="csrf-token"]').content;
+
 docReady(function() {
+    const user = JSON.parse(document.querySelector("#app").dataset.user);
     let body = document.getElementsByTagName('body')[0];
     let sidebar = document.getElementById('sidebar');
     let sidebarMenu = document.getElementById('sidebarMenu');
@@ -14,14 +20,12 @@ docReady(function() {
         sidebarMenu.style.display = 'none';
     }
 
-    const color = '#343a40';
-    const text = '#cfcfcf';
-    const textHover = '#99d066';
+    color = user.sidebar_color ? user.sidebar_color : '#343a40';
+    text = user.sidebar_text_color ? user.sidebar_text_color : '#cfcfcf';
+    textHover = user.sidebar_hover_text_color ? user.sidebar_hover_text_color : '#72d416';
     changeSidebarColor(color);
-    changeSidebarTextColor(text)
-    changeSidebarHoverTextColor(textHover)
-
-
+    changeSidebarTextColor(text);
+    changeSidebarHoverTextColor(textHover);
 
     changeMenu();
     displayScrollBar();
@@ -48,39 +52,40 @@ docReady(function() {
 });
 
 
-function changeSidebarColor(color)
+function changeSidebarColor(new_color)
 {
-    console.log(color)
-    document.getElementById('sidebar_color').value = color;
-    sidebar.style.backgroundColor = color;
-    header.style.backgroundColor = color;
+    color = new_color;
+    document.getElementById('sidebar_color').value = new_color;
+    sidebar.style.backgroundColor = new_color;
+    header.style.backgroundColor = new_color;
 }
 
-function changeSidebarTextColor(color)
+function changeSidebarTextColor(new_color)
 {
-    console.log(color)
-    document.getElementById('sidebar_text_color').value = color;
-    sidebar.style.color = color
-    header.style.color = color;
-    profileMenu.style.color = color;
+    text = new_color;
+    document.getElementById('sidebar_text_color').value = new_color;
+    sidebar.style.color = new_color
+    header.style.color = new_color;
+    profileMenu.style.color = new_color;
 
     let anchors = sidebar.getElementsByTagName('a');
 
     for(let i = 0; i < anchors.length; i++){
         let anchor = anchors[i];
-        anchor.style.color = color;
+        anchor.style.color = new_color;
         anchor.addEventListener("mouseout", mOut, false);
 
         function mOut() {  
-           anchor.setAttribute("style", "color:"+color+";")
+           anchor.setAttribute("style", "color:"+new_color+";")
         }
     }
 }
 
-function changeSidebarHoverTextColor(color)
+function changeSidebarHoverTextColor(new_color)
 {
-    console.log(color)
-    document.getElementById('sidebar_text_hover_color').value = color;
+    textHover = new_color;
+    let navItem = sidebar.getElementsByClassName('menu-deroulant');
+    document.getElementById('sidebar_text_hover_color').value = new_color;
 
     let anchors = sidebar.getElementsByTagName('a');
 
@@ -89,19 +94,48 @@ function changeSidebarHoverTextColor(color)
         anchor.addEventListener("mouseover", mOver, false);
 
         function mOver() {
-           anchor.setAttribute("style", "color:"+color+";")
+           anchor.setAttribute("style", "color:"+new_color+";")
         }
     }
+
+
+    for(let i = 0; i < navItem.length; i++){
+        let menuDeroulant = navItem[i];
+        if(menuDeroulant.classList.contains(' active')){
+            
+        }
+    }
+}
+
+
+function saveUserSidebarColumn()
+{
+    (async () => {
+        const rawResponse = await fetch(base_url + '/user_sidebar_color', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                "X-CSRF-Token": csrf
+            },
+            body: JSON.stringify({color: color, text: text, textHover: textHover})
+        });
+        const content = await rawResponse.json();
+
+        console.log(content);
+    })();
+
 }
 
 function resetDefautColor()
 {
     color = '#343a40';
     text = '#cfcfcf';
-    textHover = '#99d066';
+    textHover = '#72d416';
     changeSidebarColor(color);
     changeSidebarTextColor(text)
     changeSidebarHoverTextColor(textHover)
+    saveUserSidebarColumn();
 }
 
 
@@ -194,34 +228,3 @@ function changeMenu(url = null)
 
     displayScrollBar();
 }
-
-
-// function changeSideBarColor(color, text, textHover)
-// {
-//     console.log(color)
-//     getColor(color)
-
-
-//     sidebar.style.backgroundColor = color;
-//     sidebar.style.color = text
-//     header.style.backgroundColor = color;
-//     header.style.color = text;
-//     profileMenu.style.color = text;
-
-//     let anchors = sidebar.getElementsByTagName('a');
-
-//     for(let i = 0; i < anchors.length; i++){
-//         let anchor = anchors[i];
-//         anchor.style.color = '#cfcfcf';
-//         anchor.addEventListener("mouseover", mOver, false);
-//         anchor.addEventListener("mouseout", mOut, false);
-
-//         function mOver() {
-//            anchor.setAttribute("style", "color:"+textHover+";")
-//         }
-
-//         function mOut() {  
-//            anchor.setAttribute("style", "color:"+text+";")
-//         }
-//     }
-// }
